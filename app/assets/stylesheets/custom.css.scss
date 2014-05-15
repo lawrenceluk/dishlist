@@ -78,6 +78,7 @@ label {
 .r-lead {
 	color: #333;
 	font-size: 2.7em;
+	margin-bottom: 14px;
 }
 
 #mapsaddress {
@@ -152,6 +153,7 @@ label {
 	width: 85%;
 }
 
+// restaurant page
 .locubutton {
 	margin-top: 20px;
 }
@@ -159,4 +161,22 @@ label {
 .dishstats {
 	color: #F06859;
 	font-size: 0.88em;
+}
+
+// dishlist
+.restaurant-listing {
+	div {
+		position: relative;
+		top: 10px;
+		display: inline-block;
+		margin-left: 12px;
+	}
+}
+.listing-title {
+	font-size: 2em;
+	color: #222;
+}
+.listing-descrip {
+	font-size: 0.9em;
+	color: #888;
 }

@@ -11,6 +11,9 @@ class PageController < ApplicationController
 	  @restaurants = r_query.get
 	end
 
+	def friends
+	end
+
 	def list
 		if active_user.nil?
 			redirect_to root_path
@@ -27,6 +30,7 @@ class PageController < ApplicationController
 	  @r = r_query.get[0]
 	  if @r
 			dishes = Parse::Query.new("Dish").tap do |q|
+				q.limit = 1000
 			  q.eq("restaurant", Parse::Pointer.new({
 			    "className" => "Restaurant",
 			    "objectId"  => params[:id]

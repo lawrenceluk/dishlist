@@ -23,7 +23,8 @@
         </li>
         <% if signed_in? %>
         <li><%= link_to "My Dishlist", dishlist_path %></li>
-        <li><%= link_to "Logout", logout_path, method: :delete %>
+        <li><%= link_to "Friends", friends_path %></li>
+        <li><%= link_to "Logout", logout_path, method: :delete %></li>
         <% else %>
         <li><%= link_to "Sign Up", signup_path %></li>
         <li><%= link_to "Login", login_path %></li>

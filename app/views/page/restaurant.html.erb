@@ -1,5 +1,7 @@
-<% content_for :title, "| #{@r["name"]}" %>
-<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize" %>
+<% if @r %>
+	<% content_for :title, "| #{@r["name"]}" %>
+	<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize" %>
+<% else %><% content_for :title, "| Not Found}" %><% end %>
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 		<% if @r.nil? %>
