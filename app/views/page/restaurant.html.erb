@@ -64,13 +64,13 @@
 							<% if dish["liked"] || dish["disliked"] %>
 								<div class="dish-rating">
 								<% if dish["liked"] && dish["liked"] > 1 && (!dish["disliked"] || dish["disliked"] == 0) %>
-									<div class="rating-good" style="width: 100px"></div> in <%= dish["liked"] %> ratings.
+									<div class="rating-good" style="width: 100px;"></div> in <%= dish["liked"] %> ratings.
 								<% elsif dish["disliked"] && dish["disliked"] > 2 && (!dish["liked"] || dish["liked"] == 0) %>
-									<div class="rating-bad" style="width: 100px"></div> in <%= dish["disliked"] %> ratings.
-								<% elsif dish["disliked"] > 1 && dish["liked"] > 1 %>
+									<div class="rating-bad" style="width: 100px;"></div> in <%= dish["disliked"] %> ratings.
+								<% elsif (dish["disliked"] && dish["disliked"] > 1) && (dish["liked"] && dish["liked"] > 1) %>
 									<% likewidth = dish["liked"].to_f/(dish["liked"]+dish["disliked"])*100 %>
-									<div class="rating-good" style=<%= "width:#{likewidth}px" %>></div>
-									<div class="rating-bad" style=<%= "width:#{100-likewidth}px" %>></div> in <%= dish["liked"]+dish["disliked"] %> ratings.
+									<div class="rating-good" style=<%= "width:#{likewidth}px;" %>></div>
+									<div class="rating-bad" style=<%= "width:#{100-likewidth}px;margin-left:-3px;" %>></div> in <%= dish["liked"]+dish["disliked"] %> ratings.
 								<% end %>
 								</div>
 							<% end %>

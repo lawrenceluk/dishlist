@@ -78,7 +78,7 @@ function drawDishes(dishes) {
       str += " - price not listed";
     else str += " - $"+d.get("price");
     str += "</div>"
-    str += "<div class='col-xs-4 iconset'>";
+    str += "<div class='col-xs-4 iconset' id='ico-"+d.id+"'>";
     if (mode != "Likelist")
       str += "<i class='fa fa-thumbs-o-up liked' title='Tried it, liked it!' id='li-"+d.id+"'></i> ";
     if (mode != "Dislikelist")
@@ -93,7 +93,7 @@ function drawDishes(dishes) {
 }
 
 $(document).one('click', ".fa", function() {
-  $(this).hide();
+  $(this).parent('div').hide();
   if ($(this).hasClass("remove")) {
     var dishid = $(this).attr('id').split("-")[1];
     Parse.Cloud.run('removeDishFromUser'+mode, { userid: parseuser.id, dish: dishid }, {
@@ -101,7 +101,7 @@ $(document).one('click', ".fa", function() {
       $("#"+dishid).hide();
     },
     error: function(error) {
-      $("#rm-"+dishid).show();     
+      $("#ico-"+dishid).show();     
       console.log("Error saving: "+JSON.stringify(error));
     }
     });
@@ -112,7 +112,7 @@ $(document).one('click', ".fa", function() {
       addToLike(status, dishid);
     },
     error: function(error) {
-      $("#rm-"+dishid).show();     
+      $("#ico-"+dishid).show();     
       console.log("Error saving: "+JSON.stringify(error));
     }
     });
@@ -123,7 +123,7 @@ $(document).one('click', ".fa", function() {
       addToDislike(status, dishid);
     },
     error: function(error) {
-      $("#rm-"+dishid).show();     
+      $("#ico-"+dishid).show();     
       console.log("Error saving: "+JSON.stringify(error));
     }
     });
@@ -136,7 +136,7 @@ function addToLike(status, dishid) {
     $("#"+dishid).hide();
   },
   error: function(error) {
-    $("#rm-"+dishid).show();     
+    $("#ico-"+dishid).show();     
     console.log("Error saving: "+JSON.stringify(error));
   }
   });
@@ -148,7 +148,7 @@ function addToDislike(status, dishid) {
     $("#"+dishid).hide();
   },
   error: function(error) {
-    $("#rm-"+dishid).show();     
+    $("#ico-"+dishid).show();     
     console.log("Error saving: "+JSON.stringify(error));
   }
   });  
