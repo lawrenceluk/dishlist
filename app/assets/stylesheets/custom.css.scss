@@ -1,0 +1,162 @@
+.navbar-brand {
+	font-size: 30px;
+}
+
+.navbar-header, .nav {
+	padding: 10px 0;
+}
+
+.deviseform {
+	text-align: center;
+	background: #FAFAFA;
+	padding-bottom: 40px;
+	border-radius: 0 0 10px 10px;
+	border: 1px solid #DDD;
+}
+
+label {
+	font-weight: 200;
+}
+
+.field__input {
+	padding: 5px;
+  width: 100%;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+}
+
+#error_explanation {
+	h2 {
+		font-size: 20px;
+		color: #F59393;
+	}
+	ul {
+		text-align: left;
+		list-style-type: none;
+	}
+}
+
+.foot {
+	font-size: 13px;
+	color: #999;
+	margin-left: 40px;
+}
+
+.restaurant {
+	width: 70%;
+	padding: 4px;
+	margin: 10px;
+	color: #999;
+	&:hover {
+		cursor: pointer;
+		background: #F0EEED;
+	}
+}
+
+.rating {
+	color: #E0741B;
+	font-size: 1.5em;
+}
+
+.black {
+	color: #111;
+}
+
+.gray {
+	color: #AAA;
+}
+
+.alert {
+	font-size: 1.2em;
+	color: #A3333A;
+}
+
+.bigger {
+	font-size: 1.3em;
+}
+
+.r-lead {
+	color: #333;
+	font-size: 2.7em;
+}
+
+#mapsaddress {
+	display: none;
+}
+
+#username {
+	display: none;
+}
+
+#map-canvas {
+	box-shadow: 0px 2px 4px #AAA;
+}
+
+.imgblock {
+  display:inline-block;
+  width:100px;
+  height:100px;
+  vertical-align:top;
+  margin-right:10px;
+}
+
+.textblock {
+  display:inline-block;
+  width:200px;	
+  margin-bottom: 20px;
+}
+
+.dishes {
+	margin-bottom: 40px;
+}
+
+.dish {
+	cursor: pointer;
+	border: 4px solid #FCFCFC;
+	padding-bottom: 10px;
+	i {
+		visibility: hidden;
+	}
+	.fa-check {
+		visibility: visible;
+	}
+	&:hover {
+		i {
+			visibility: visible;
+		}
+	}
+}
+
+#yourlist {
+	font-size: 1.3em;
+	color: #E0741B;
+}
+
+.hiding {
+	display: none;
+}
+
+.green {
+	color: #709E54;
+}
+
+.subtlegreen {
+	background-color: #EAF0E6;
+}
+
+.addToDish {
+}
+
+.fixedwidth {
+	float: left;
+	width: 85%;
+}
+
+.locubutton {
+	margin-top: 20px;
+}
+
+.dishstats {
+	color: #F06859;
+	font-size: 0.88em;
+}

@@ -1,0 +1,115 @@
+<% content_for :title, "| #{@r["name"]}" %>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDdqxN7U-Lv6g0a6yGmoivdM5ks6EvHs7Y&sensor=TRUE" %>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<% if @r.nil? %>
+			<h2>That restaurant does not exist!</h2>
+			<%= link_to "Click here to return to the home page.", root_path %>
+		<% else %>
+		<div id="mapsaddress"><%= @r["short_address"] %></div>
+		<div id="r-id" class="hidden"><%= @id %></div>
+		<% if signed_in? %>
+			<div id="username"><%= active_user.username %></div>
+		<% end %>
+		<div class="r-lead" id="r-name"><%= @r["name"] %></div>
+		<div class="row">
+			<div class="col-md-5">
+				<%= image_tag @r["yelp_image_url"], class: "img-thumbnail imgblock" %>
+				<div class="textblock">
+					<div class="bigger"><span class="rating"><%= @r["rating"] %></span>/5 in 
+						<%= link_to "#{@r["review_count"]} reviews", "http://www.yelp.com/search?find_desc=#{@r["name"]}&find_loc=#{@r["short_address"]}&ns=1", target: "_blank" %></h5></div>
+					<div>Categories: 
+						<% if @r["display_yelp_categories"] %>
+							<%= @r["display_yelp_categories"] %>
+						<% else %>
+							None
+						<% end %>
+					</div>
+					<div><%= @r["display_address"] %></div>
+					<div>Phone: <%= @r["display_phone_number"] %></div>
+				</div>
+				<div>Address: <%= @r["full_address"] %></div>
+				<% if @dishes.any? %>
+					<div><%= @dishes.size %> dishes are listed </div>
+				<% end %>
+				<div>Your Dishlist contains <span id="yourlist">0</span> dishes from this restaurant.</div>
+				<% if @r["closed"] == true %>
+					<div class="alert">This location is closed!</div>
+				<% end %>
+			</div>
+			<div class="col-md-7">
+				<div id="map-canvas" style="height: 300px;"></div>
+			</div>
+		</div>
+		<div class="row dishes">
+			<% if @dishes.any? %>
+				<h2>Popular Dishes</h2>
+				<% @dishes.each do |dish| %>
+					<div class="dish col-xs-6" id=<%= dish.id %>>
+						<div class="fixedwidth">
+							<h5><%= dish["name"] %></h5>
+							<% if dish["description"] %>
+								<%= dish["description"] %>
+							<% end %>
+							<% if dish["price"] != "-1" %>
+								- $<%= dish["price"] %>
+							<% else %>
+								- price not listed
+							<% end %>
+							<% if dish["listed"] && dish["listed"] > 0 %>
+								<div class="dishstats">On <%= pluralize(dish["listed"], "Dishlist") %></div>
+							<% end %>
+						</div>
+						<% if signed_in? %>
+							<div class="pull-right">
+								<i class="fa fa-plus fa-2x addToDish" title="Add to your Dishlist" id=<%= "p#{dish.id}" %>></i>
+							</div>
+						<% end %>
+					</div>
+				<% end %>
+			<% else %>
+				<h2 class="gray">There aren't any dishes listed at this restaurant.</h2>
+				<div id="uselocu" class="btn btn-info locubutton">Search for a menu on Locu</div>
+				<h3 class="gray hiding" id="usinglocu">Loading...</h3>
+			<% end %>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+<script>
+var geocoder;
+var map;
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var mapOptions = {
+    zoom: 16,
+  }
+  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  codeAddress();
+}
+
+function codeAddress() {
+  var address = $("#mapsaddress").html();
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+}
+
+initialize();
+</script>
+
+<% content_for :javascript_includes do %>
+	<%= javascript_include_tag "locu.js" %>
+	<% if signed_in? %>
+		<%= javascript_include_tag "dishlogic.js" %>
+	<% end %>
+<% end %>

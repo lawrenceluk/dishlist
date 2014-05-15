@@ -1,0 +1,19 @@
+<%= link_to restaurant_path(r["name"].gsub(/[^0-9A-Za-z]/, ''), r["objectId"]) do %>
+<div class="restaurant row">
+	<div class="col-xs-3">
+		<%= image_tag r["yelp_image_url"], class: "img-thumbnail" %>
+	</div>
+	<div class="col-xs-9">
+			<h4><%= r["name"] %></h4>				
+			<span class="rating"><%= r["rating"] %></span>/5 in <%= r["review_count"] %> reviews</h5><br />
+			<div class="row">
+				<div class="col-xs-5">
+					<span class="text-warning"><%= r["display_yelp_categories"] %></span>
+				</div>
+				<div class="col-xs-7">
+					<%= r["short_address"] %>
+				</div>
+			</div>
+	</div>
+</div>
+<% end %>

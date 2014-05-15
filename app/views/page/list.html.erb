@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<h2><%= active_user.username %>'s Dishlist - this page is not finished</h2>
+		<div id="content">
+			<h3 class="gray">Loading...</h3>
+		</div>
+	</div>
+</div>
+<div id="username"><%= @userid %></div>
+
+<% content_for :javascript_includes do %>
+	<%= javascript_include_tag "dishlist.js" %>
+<% end %>

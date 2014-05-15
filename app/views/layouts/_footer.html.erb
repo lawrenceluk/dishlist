@@ -1,0 +1,5 @@
+<% if signed_in? %>
+	<div class="foot">Signed in as <%= active_user.username %></div>
+<% end %>
+<h6 style="text-align: center;">Data retrieved from <%= link_to "Yelp", "http://yelp.com" %>
+	and <%= link_to "Locu", "https://dev.locu.com/" %>. Save That Dish 2014.</h6>
