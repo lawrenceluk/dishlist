@@ -3,7 +3,7 @@ Dishlist::Application.routes.draw do
   root 'page#home'
 
   match '/dishlist', to: 'page#list', via: [:get]
-  match '/:restaurant/:id', to: 'page#restaurant', via: [:get], as: "restaurant"
+  match '/restaurant/:restaurant/:id', to: 'page#restaurant', via: [:get], as: "restaurant"
 
   match '/search', to: 'page#search', via: [:get]
 
