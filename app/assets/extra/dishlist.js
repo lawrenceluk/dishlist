@@ -56,5 +56,25 @@ function drawRestaurant(rid, dishes) {
 }
 
 function drawDishes(dishes) {
-  
+  for (var i=0;i<dishes.length;i++) {
+    var str = "<div class='dish-listing'>";
+    var d = dishes[i];
+    var date = d.createdAt.toString().split(" ");
+    str += "<div class='dish-title'>"+d.get("name")+"</div>";
+    str += "<div class='dish-descrip row'>";
+    str += "<div class='col-xs-8'>";
+    if (d.get("description"))
+      str += d.get("description");
+    if (d.get("price") == "-1")
+      str += " - price not listed";
+    else str += " - $"+d.get("price");
+    str += "</div>"
+    str += "<div class='col-xs-4 iconset'>";
+    str += "<i class='fa fa-thumbs-o-up' title='Tried it, liked it!'></i>  <i class='fa fa-thumbs-down' title='Tried it, didnt like it :('></i>  <i class='fa fa-ban' title='Remove from my Dishlist'></i>";
+    str += "</div>";
+    str += "</div>"
+    str += "</div>";
+    // created at to see how long it's been on your list
+    $c.append(str);
+  }
 }

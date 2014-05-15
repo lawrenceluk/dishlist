@@ -180,3 +180,30 @@ label {
 	font-size: 0.9em;
 	color: #888;
 }
+.dish-listing {
+	padding: 6px;
+	margin-top: 8px;
+	margin-left: 20px;
+	color: #222;
+	font-size: 1.1em;
+	i {
+		visibility: hidden;
+	}
+	&:hover {
+		i {
+			visibility: visible;
+		}
+	}
+}
+.dish-descrip {
+	font-size: 0.88em;
+	color: #AAA;
+}
+.iconset {
+	margin-top: -10px;
+	font-size: 1.8em;
+	.fa {
+		margin-left: 9px;
+		cursor: pointer;
+	}
+}
