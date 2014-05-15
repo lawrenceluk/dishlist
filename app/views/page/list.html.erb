@@ -1,6 +1,21 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
-		<h2><%= active_user.username %>'s Dishlist</h2>
+		<h2><%= active_user.username %>'s 
+			<% if @show.nil? %>
+				Dishlist
+			<% else %>
+				<%= link_to 'Dishlist', dishlist_path %>
+			<% end %> | 
+			<% if !@show.nil? && @show == "liked" %>
+				liked
+			<% else %>
+				<%= link_to 'liked', '/dishlist/?show=liked' %>
+			<% end %> |
+			<% if !@show.nil? && @show == "disliked" %>
+				disliked
+			<% else %>
+				<%= link_to 'disliked', '/dishlist/?show=disliked' %>
+			<% end %></h2>
 		<div id="content">
 			<h3 class="gray">Loading...</h3>
 		</div>

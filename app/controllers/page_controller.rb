@@ -22,6 +22,7 @@ class PageController < ApplicationController
 		user_q.eq("username", active_user.username)
 		parseuser = user_q.get.first
 		@userid = parseuser.id
+		@show = params[:show]
 	end
 
 	def restaurant

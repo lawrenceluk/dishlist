@@ -163,6 +163,20 @@ label {
 	font-size: 0.88em;
 }
 
+.rating-good {
+    display: inline-block;
+    background-color: #7ED162;
+    width: 50px;
+    height: 10px;
+}
+
+.rating-bad {
+    display: inline-block;
+    background-color: #D16F62;
+    width: 50px;
+    height: 10px;
+}
+
 // dishlist
 .restaurant-listing {
 	div {
@@ -205,5 +219,20 @@ label {
 	.fa {
 		margin-left: 9px;
 		cursor: pointer;
+	}
+}
+.fa-ban {
+	&:hover {
+		color: #CF626D;
+	}
+}
+.fa-thumbs-down {
+	&:hover {
+		color: #111;
+	}
+}
+.fa-thumbs-o-up {
+	&:hover {
+		color: #6DD1C7;
 	}
 }
