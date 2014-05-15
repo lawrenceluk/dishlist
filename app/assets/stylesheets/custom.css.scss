@@ -58,6 +58,10 @@ label {
 	font-size: 1.5em;
 }
 
+.center {
+	text-align: center;
+}
+
 .black {
 	color: #111;
 }
@@ -175,6 +179,11 @@ label {
     background-color: #D16F62;
     width: 50px;
     height: 10px;
+}
+.form-group {
+	label {
+		margin-left: 10px;
+	}
 }
 
 // dishlist

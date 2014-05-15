@@ -34,7 +34,7 @@ function makeLocuSearch(rname, address, parseobject) {
     'dataType': 'jsonp',
     'success': function(data, textStats, XMLHttpRequest) {
       if (data.objects.length == 0 || data.objects[0].has_menu == false) {
-        show(rname+" does not have an entry with Locu.");
+        show(rname+" does not have a menu listed online.");
       } else {
         show(rname+" has a menu listed with Locu. Downloading...");
         getMenuFromLocu(data.objects[0].id, parseobject);

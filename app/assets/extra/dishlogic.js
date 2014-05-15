@@ -1,9 +1,10 @@
-var parseuser;
+var parseuser, restaurant;
 // handle parse stuff
 if ($("#username").html().length > 0) {
   Parse.initialize("dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", "wHkRLFgELqtUWCAnoXKPdJi7pWfYMJnNisEhuNS2"); 
   var User = Parse.Object.extend("User");
   var Dish = Parse.Object.extend("Dish");
+  var Restaurant = Parse.Object.extend("Restaurant");
   var getuser = new Parse.Query(User);
   getuser.equalTo("username", $("#username").html());
   getuser.find({
@@ -12,7 +13,16 @@ if ($("#username").html().length > 0) {
       syncDishlist();
     },
     error: function(object, error) {
-      console.log("Parse Error: "+error)
+      console.log("Parse Error: "+JSON.stringify(error));
+    }
+  });
+  var getrestaurant = new Parse.Query(Restaurant);
+  getrestaurant.get($("#r-id").html(), {
+    success: function(rest) {
+      restaurant = rest;
+    },
+    error: function(object, error) {
+      console.log("Parse Error: "+JSON.stringify(error));
     }
   });
   // scans the page for things already on list
@@ -68,4 +78,40 @@ if ($("#username").html().length > 0) {
       });     
     }
   });
+  $("#d-add").submit(function() {
+    var name = $("#d-name").val();
+    var descrip = $("#d-descrip").val();
+    var price = $("#d-price").val();
+    if (name == "" || price == "") {
+      showAdd("Dish name and price are required.");
+    } else {
+      $(this).hide();
+      showAdd("Adding "+name+"...");
+        var d = new Dish();
+        d.save(
+          {
+            name: name,
+            description: descrip,
+            price: price,
+            restaurant: restaurant
+          }, 
+          {
+          success: function(object) {
+            showAdd("Added dish: '"+object.attributes.name+"'. Refresh the page to see it.");
+            $("#d-add").show();
+            $("#d-add").trigger("reset");
+          },
+          error: function(model, error) {
+            showAdd("Error - could not add the dish. Please try again later.");
+            console.log("Error: "+JSON.stringify(error));
+          }
+        });
+    }
+    return false; // avoid to execute the actual submit of the form.
+  });
+  var $dshow = $("#d-message");
+  function showAdd(str) {
+    $dshow.removeClass("hiding");
+    $dshow.html(str);
+  }
 }

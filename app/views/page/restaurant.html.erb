@@ -34,7 +34,7 @@
 				<% if @dishes.any? %>
 					<div><%= @dishes.size %> dishes are listed </div>
 				<% end %>
-				<div>Your Dishlist contains <span id="yourlist">0</span> dishes from this restaurant.</div>
+				<% if signed_in? %><div>Your Dishlist contains <span id="yourlist">0</span> dishes from this restaurant.</div><% end %>
 				<% if @r["closed"] == true %>
 					<div class="alert">This location is closed!</div>
 				<% end %>
@@ -88,6 +88,22 @@
 				<h3 class="gray hiding" id="usinglocu">Loading...</h3>
 			<% end %>
 		</div>
+		<% if signed_in? %>
+			<hr/>
+			<h5>Add a dish manually:</h5>
+	    <form class="form-inline" id="d-add">
+	    	<div class="form-group">
+	    		<label for="d-name">Dish Name</label>
+	        <input type="text" class="form-control" placeholder="Good Burger" name="name" id="d-name">
+	        <label for="d-descrip">Description</label>
+	        <input type="text" class="form-control" placeholder="optional" name="descrip" id="d-descrip">
+	        <label for="d-price">Price</label>
+	        <input type="text" class="form-control" placeholder="4.75 (in dollars)" name="price" id="d-price">
+	      </div>
+        <button class="btn btn-info" id="d-add">Add</button>
+      </form>
+      <div class="hiding alert" id="d-message"></div>
+     <% end %>
 		<% end %>
 	</div>
 </div>
@@ -119,8 +135,6 @@ function codeAddress() {
     }
   });
 }
-
-initialize();
 </script>
 
 <% content_for :javascript_includes do %>
