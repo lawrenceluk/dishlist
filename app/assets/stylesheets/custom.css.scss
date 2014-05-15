@@ -43,7 +43,6 @@ label {
 }
 
 .restaurant {
-	width: 70%;
 	padding: 4px;
 	margin: 10px;
 	color: #999;
@@ -244,4 +243,16 @@ label {
 	&:hover {
 		color: #6DD1C7;
 	}
+}
+
+// homepage
+.explanation {
+	h3 {
+		margin-top: 8px;
+	}
+	background: #FFFAFA;
+	border: 1px solid #d9230f;
+	border-bottom: 2px solid #e72510;
+	padding: 12px;
+	border-radius: 4px;
 }
