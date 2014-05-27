@@ -1,3 +1,7 @@
+body {
+	background-color: #EFEFEF;
+}
+
 @media (max-width: 600px) {
   .restaurant {
   	h4 {
@@ -8,8 +12,32 @@
   }
 }
 
-.navbar-brand {
+.navbar {
+	background-color: #16AB99;
+	border: none;
+	border-radius: 0;
+}
+
+a {
+	color: #2C8077;
+	&:hover {
+		color: #076F64;
+	}
+}
+
+.navbar-default .navbar-nav li a {
+	color: #FFF;
+	&:hover {
+		color: #B4EDE7;
+	}
+}
+
+.navbar-default .navbar-brand {
+	color: #FFF;
 	font-size: 30px;
+	&:hover {
+		color: #D9FAF6;
+	}
 }
 
 .navbar-header, .nav {
@@ -53,15 +81,17 @@ label {
 }
 
 .restaurant {
+	background-color: #FFF;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
 	a {
 		text-decoration: none !important;
 	}
 	padding: 4px;
-	margin: 10px;
+	margin: 5px 10px 0px 10px;
 	color: #999;
 	&:hover {
 		cursor: pointer;
-		background: #F0EEED;
 	}
 }
 
@@ -264,14 +294,27 @@ label {
 	h3 {
 		margin-top: 8px;
 	}
-	background: #FFFAFA;
-	border: 1px solid #d9230f;
-	border-bottom: 2px solid #e72510;
+	background: #FAFAFA;
+	border: 1px solid #2C8077;
+	border-bottom: 2px solid #076F64;
 	padding: 12px;
 	border-radius: 4px;
 }
 
 // header
+.navbar-form {
+	border: none !important;
+}
+.navbar-toggle {
+	background: transparent !important;
+	border-color: #FFF !important;
+	&:active {
+		border-color: #CCC !important;
+	}
+}
+.icon-bar {
+	background-color: #FFF !important;
+}
 .collapse {
 	overflow: hidden;
 	.form-control {
@@ -292,4 +335,26 @@ label {
 
 .small-margin {
 	margin-bottom: 20px;
+}
+
+// buttons
+.btn-info {
+	border: 1px solid #16AB99;
+	color: #16AB99;
+	background: transparent;
+	&:hover {
+		color: #FFF;
+		border: 1px solid #1F877B;
+		background: #16AB99;
+	}
+}
+
+.btn-primary {
+	border: 1px solid #FFF;
+	background: transparent;
+	&:hover {
+		background: #FFF;
+		border: 1px solid transparent;
+		color: #16AB99;
+	}	
 }
