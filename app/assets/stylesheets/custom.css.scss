@@ -20,14 +20,14 @@ body {
 
 a {
 	color: #2C8077;
-	&:hover {
+	&:hover , .hover_effect {
 		color: #076F64;
 	}
 }
 
 .navbar-default .navbar-nav li a {
 	color: #FFF;
-	&:hover {
+	&:hover , .hover_effect {
 		color: #B4EDE7;
 	}
 }
@@ -35,7 +35,7 @@ a {
 .navbar-default .navbar-brand {
 	color: #FFF;
 	font-size: 30px;
-	&:hover {
+	&:hover , .hover_effect {
 		color: #D9FAF6;
 	}
 }
@@ -91,7 +91,7 @@ label {
 	padding: 4px;
 	margin: 5px 10px 0px 10px;
 	color: #999;
-	&:hover {
+	&:hover , .hover_effect {
 		cursor: pointer;
 	}
 }
@@ -177,7 +177,7 @@ label {
 	.fa-check {
 		visibility: visible;
 	}
-	&:hover {
+	&:hover , .hover_effect {
 		i {
 			visibility: visible;
 		}
@@ -287,7 +287,7 @@ label {
 	i {
 		visibility: hidden;
 	}
-	&:hover {
+	&:hover , .hover_effect {
 		i {
 			visibility: visible;
 		}
@@ -307,17 +307,17 @@ label {
 }
 .fa-trash-o {
 	width: 30px;
-	&:hover {
+	&:hover , .hover_effect {
 		color: #CF626D;
 	}
 }
 .fa-thumbs-down {
-	&:hover {
+	&:hover, .hover_effect {
 		color: #111;
 	}
 }
 .fa-thumbs-o-up {
-	&:hover {
+	&:hover, .hover_effect {
 		color: #6DD1C7;
 	}
 }
@@ -372,7 +372,7 @@ label {
 	border: 1px solid #16AB99;
 	color: #16AB99;
 	background: transparent;
-	&:hover {
+	&:hover, .hover_effect {
 		color: #FFF;
 		border: 1px solid #1F877B;
 		background: #16AB99;
@@ -387,7 +387,7 @@ label {
 .btn-primary {
 	border: 1px solid #FFF;
 	background: transparent;
-	&:hover {
+	&:hover, .hover_effect {
 		background: #FFF;
 		border: 1px solid transparent;
 		color: #16AB99;
@@ -416,7 +416,7 @@ label {
 		color: #C45858;
 		cursor: pointer;
 	}
-	&:hover {
+	&:hover, .hover_effect {
 		.fa-times {
 			visibility: visible;
 		}
@@ -440,7 +440,7 @@ label {
 		visibility: hidden;
 		color: #16AB99;
 	}
-	&:hover {
+	&:hover, .hover_effect {
 		.fa-plus {
 			visibility: visible;
 		}
