@@ -2,6 +2,7 @@ var interval = new Date().getTime();
 var loaded = 10;
 
 $(window).scroll(function () {
+	if ($("#home-content").length > 0)
   if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 ) {
     if (interval+2000 < new Date().getTime()) {
     	interval = new Date().getTime() + 2000;
@@ -14,7 +15,6 @@ Parse.initialize("dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", "wHkRLFgELqtUWCAnoX
 var Restaurant = Parse.Object.extend("Restaurant");
 
 function loadMore() {
-	console.log("more");
 	var query = new Parse.Query(Restaurant);
 	query.descending("createdAt");
 	query.limit(10);
