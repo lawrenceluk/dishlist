@@ -10,6 +10,9 @@ body {
   	}
   	font-size: 0.8em;
   }
+ 	::-webkit-scrollbar { 
+  	display: none; 
+	}
 }
 
 .navbar {
