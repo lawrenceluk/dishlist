@@ -14,6 +14,13 @@ class PageController < ApplicationController
 	def friends
 		if active_user.nil?
 			redirect_to root_path
+		else
+			user_q = Parse::Query.new("_User")
+			user_q.eq("username", active_user.username)
+			parseuser = user_q.get.first
+			@requests = parseuser["friendrequests"]
+			@friends = parseuser["friendnames"]
+			@friendids = parseuser["friends"]
 		end
 	end
 

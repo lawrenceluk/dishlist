@@ -2,20 +2,42 @@
 	<div class="col-md-8 col-md-offset-2">
 		<h2><%= active_user.username %>'s Friends <i class="fa fa-smile-o"></i></h2>
 		<div id="content">
-			<h3 class="gray">This feature needs to be implemented. <i class="fa fa-frown-o"></i></h3>
+			<% if @friends && @friends.any? %>
+                <% @friends.each_with_index do |f, i| %>
+                    <div class='friend-card' id='<%= @friendids[i] %>'>
+                        <i class='fa fa-user'></i> <%= f %>
+                        <i class='fa fa-times pull-right'></i>
+                    </div>
+                <% end %>
+            <% else %>
+                <h3 class="gray" id="nofriends">You don't have any friends yet. <i class="fa fa-frown-o"></i></h3>
+            <% end %>
 		</div>
 		<hr />
-		<h5>Find a friend:</h5>
-    <form class="form-inline" id="d-add">
-    	<div class="form-group">
-    		<label for="d-name">Username</label>
-        <input type="text" class="form-control" placeholder="chipmunk69" name="name" id="d-name">
-        <label for="d-descrip">Email</label>
-        <input type="text" class="form-control" placeholder="chipmunk69@gmail.com" name="email" id="d-email">
-      </div>
-      <button class="btn btn-info" id="d-add">Add</button>
-    </form>
-    <div class="hiding alert" id="d-message"></div>
+        <% if @requests && @requests.any? %>
+            <h5>Pending friend requests:</h5>
+            <% @requests.each do |r| %>
+                <div class='add-card'>
+                    <i class='fa fa-user'></i> <span class='r-name'><%= r %></span>
+                    <div class="pull-right">
+                        <i class='fa fa-check'></i>
+                        <i class='fa fa-times'></i>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+		<h5>Find a friend: (case sensitive)</h5>
+        <form class="form-inline" id="d-add">
+            <div class="form-group">
+            	<label for="d-name">Username</label>
+                <input type="text" class="form-control" placeholder="chipmunk69" name="name" id="d-name">
+            </div>
+            <button class="btn btn-info" id="d-add">Search</button>
+        </form>
+        <div id="d-message"></div>
 	</div>
 </div>
-<div id="username"><%= @userid %></div>
+
+<% content_for :javascript_includes do %>
+    <%= javascript_include_tag "friends.js" %>
+<% end %>

@@ -243,17 +243,17 @@ label {
 }
 
 .rating-good {
-    display: inline-block;
-    background-color: #7ED162;
-    width: 50px;
-    height: 10px;
+  display: inline-block;
+  background-color: #7ED162;
+  width: 50px;
+  height: 10px;
 }
 
 .rating-bad {
-    display: inline-block;
-    background-color: #D16F62;
-    width: 50px;
-    height: 10px;
+  display: inline-block;
+  background-color: #D16F62;
+  width: 50px;
+  height: 10px;
 }
 .form-group {
 	label {
@@ -377,6 +377,11 @@ label {
 		border: 1px solid #1F877B;
 		background: #16AB99;
 	}
+	&:focus {
+		color: #FFF;
+		border: 1px solid #1F877B;
+		background: #16AB99;		
+	}
 }
 
 .btn-primary {
@@ -386,5 +391,84 @@ label {
 		background: #FFF;
 		border: 1px solid transparent;
 		color: #16AB99;
+	}
+	&:focus {
+		background: #FFF;
+		border: 1px solid transparent;
+		color: #16AB99;		
 	}	
+}
+
+// friends
+#d-message {
+	margin-top: 20px;
+}
+.friend-card {
+	width: 260px;
+	margin: 4px;
+	padding: 8px;
+	border-radius: 2px;
+	background-color: #FFF;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	.fa-times {
+		visibility: hidden;
+		color: #C45858;
+		cursor: pointer;
+	}
+	&:hover {
+		.fa-times {
+			visibility: visible;
+		}
+	}
+	&:focus {
+		.fa-times {
+			visibility: visible;
+		}
+	}
+}
+.user-card {
+	cursor: pointer;
+	width: 260px;
+	margin: 4px;
+	padding: 12px;
+	border-radius: 2px;
+	background-color: #FFF;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	.fa-plus {
+		visibility: hidden;
+		color: #16AB99;
+	}
+	&:hover {
+		.fa-plus {
+			visibility: visible;
+		}
+	}
+	&:focus {
+		.fa-plus {
+			visibility: visible;
+		}
+	}
+}
+.fa-user {
+	margin-right: 10px;
+}
+.add-card {
+	width: 260px;
+	margin: 4px;
+	padding: 12px;
+	border-radius: 2px;
+	background-color: #FFF;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	.fa-check {
+		cursor: pointer;
+		color: #58C472;
+		margin-right: 10px;
+	}
+	.fa-times {
+		cursor: pointer;
+		color: #C45858;
+	}
 }
