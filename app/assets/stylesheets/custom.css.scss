@@ -43,7 +43,9 @@ label {
 }
 
 .restaurant {
-	text-decoration: none !important;
+	a {
+		text-decoration: none !important;
+	}
 	padding: 4px;
 	margin: 10px;
 	color: #999;
@@ -154,7 +156,7 @@ label {
 
 .fixedwidth {
 	float: left;
-	width: 85%;
+	width: 80%;
 }
 
 // restaurant page
@@ -268,4 +270,8 @@ label {
 	form {
 		margin-left: 10px;
 	}
+}
+
+.small-margin {
+	margin-bottom: 20px;
 }
