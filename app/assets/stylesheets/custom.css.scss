@@ -43,6 +43,7 @@ label {
 }
 
 .restaurant {
+	text-decoration: none !important;
 	padding: 4px;
 	margin: 10px;
 	color: #999;
@@ -261,7 +262,7 @@ label {
 .collapse {
 	overflow: hidden;
 	.form-control {
-		width: 40%;
+		width: 35%;
 		display: inline-block;
 	}
 	form {
