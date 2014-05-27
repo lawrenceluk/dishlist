@@ -1,8 +1,8 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
-		<h3>Recently Added:</h3>
+		<h3>Recently Added Restaurants</h3>
 		<div class="row">
-			<div class="col-lg-8 col-md-10 col-xs-12">
+			<div class="col-lg-8 col-md-10 col-xs-12" id="home-content">
 				<% @restaurants.each do |r| %>
 					<%= render 'partials/restaurant', r: r %>
 				<% end %>
@@ -19,8 +19,15 @@
 					Find your friends to see which foods they're interested in trying, and see which dishes have been highly rated by the public.
 					This text will probably be changed later.
 				</p>
+				<p>
+					<h5>Help!</h5>
+					Our database still needs work! To quickly add restaurants and dishes to the database, <%= link_to "use this link", "http://lawrenceluk.github.io/dishlistscript" %>.
+				</p>
 			</div>
 		</div>
 	</div>
 </div>
  
+<% content_for :javascript_includes do %>
+	<%= javascript_include_tag "scrollingload.js" %>
+<% end %>

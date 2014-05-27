@@ -83,7 +83,7 @@ function drawDishes(dishes) {
       str += "<i class='fa fa-thumbs-o-up liked' title='Tried it, liked it!' id='li-"+d.id+"'></i> ";
     if (mode != "Dislikelist")
       str += "<i class='fa fa-thumbs-down disliked' title='Tried it, didnt like it :(' id='di-"+d.id+"'></i>";
-    str += "<i class='fa fa-ban remove' title='Remove from my Dishlist' id='rm-"+d.id+"'></i>";
+    str += "<i class='fa fa-trash-o remove' title='Remove from my Dishlist' id='rm-"+d.id+"'></i>";
     str += "</div>";
     str += "</div>"
     str += "</div>";

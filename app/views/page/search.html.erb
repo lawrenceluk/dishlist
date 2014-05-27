@@ -3,7 +3,7 @@
 	<h3 style="text-align: center;">You need to specify both a term (restaurant name or category) and a location.</h3>
 <% else %>
 <div class="row">
-	<div class="col-md-8 col-md-offset-2">
+	<div class="col-md-6 col-md-offset-2">
 		<h2>Results for '<%= @term %>' near '<%= @loc %>'</h2>
 		<div class="row">
 			<% @restaurants.each do |r| %>
