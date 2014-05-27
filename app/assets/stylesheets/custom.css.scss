@@ -124,7 +124,7 @@ label {
 
 .r-lead {
 	color: #333;
-	font-size: 2.3em;
+	font-size: 1.6em;
 	margin-bottom: -8px;
 }
 
@@ -144,16 +144,16 @@ label {
 	position: relative;
 	top: -22px;
   display:inline-block;
-  width:80px;
-  height:80px;
+  width:20%;
+  height:20%;
   vertical-align: top;
   margin-right:10px;
 }
 
 .textblock {
+	width: 75%;
 	vertical-align: bottom;
   display:inline-block;
-  width: 230px;	
   margin-bottom: 20px;
 }
 
@@ -229,6 +229,7 @@ label {
 }
 .title-area {
 	position: relative;
+	left: -8px;
 	top: -12px;
 	margin-bottom: -26px;
 }
