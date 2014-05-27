@@ -12,6 +12,9 @@ class PageController < ApplicationController
 	end
 
 	def friends
+		if active_user.nil?
+			redirect_to root_path
+		end
 	end
 
 	def list

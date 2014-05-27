@@ -21,14 +21,14 @@
 
 		<%= form_for(@user, :url => loginattempt_path(@user)) do |f| %>
 	    <div class="form-group row">
-	      <%= f.label :username, class: "col-lg-2 control-label" %>
-	      <div class="col-lg-8">
+	      <%= f.label :username, class: "col-xs-2 control-label" %>
+	      <div class="col-xs-8">
 	        <%= f.text_field :username, :autofocus => true, class: "field__input" %>
 	      </div>
 	    </div>
 	    <div class="form-group row">
-	      <%= f.label :password, class: "col-lg-2 control-label" %>
-	      <div class="col-lg-8">
+	      <%= f.label :password, class: "col-xs-2 control-label" %>
+	      <div class="col-xs-8">
 	        <%= f.password_field :password, class: "field__input" %>
 	      </div>
 	    </div>

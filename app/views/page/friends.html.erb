@@ -3,7 +3,20 @@
 		<h2><%= active_user.username %>'s Friends <i class="fa fa-smile-o"></i></h2>
 		<div id="content">
 			<h3 class="gray">You currently don't have any friends. <i class="fa fa-frown-o"></i></h3>
+
 		</div>
+		<hr />
+		<h5>Find a friend:</h5>
+    <form class="form-inline" id="d-add">
+    	<div class="form-group">
+    		<label for="d-name">Username</label>
+        <input type="text" class="form-control" placeholder="chipmunk69" name="name" id="d-name">
+        <label for="d-descrip">Email</label>
+        <input type="text" class="form-control" placeholder="chipmunk69@gmail.com" name="email" id="d-email">
+      </div>
+      <button class="btn btn-info" id="d-add">Add</button>
+    </form>
+    <div class="hiding alert" id="d-message"></div>
 	</div>
 </div>
 <div id="username"><%= @userid %></div>

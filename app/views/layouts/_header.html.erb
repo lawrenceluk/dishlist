@@ -2,7 +2,7 @@
   <div class="container-fluid col-md-8 col-md-offset-2">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" id="switch" data-target="#collapsing-bar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -10,15 +10,15 @@
       </button>
       <%= link_to "Dishlist", root_path, class: "navbar-brand" %>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="collapsing-bar">
       <ul class="nav navbar-nav navbar-right">
         <li>
           <form class="navbar-form navbar-right" role="search" action="/search">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="tacos, cheap dinner" name="term" id="sterm">
               <input type="text" class="form-control" placeholder="la jolla" name="location" id="sloc">
+              <button type="submit" class="btn btn-primary" id="search">Search</button>
             </div>
-            <button type="submit" class="btn btn-primary" id="search">Search</button>
           </form>
         </li>
         <% if signed_in? %>
@@ -33,3 +33,9 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<script>
+  $(".navbar-toggle").click(function(event) {
+    $(".navbar-collapse").toggle('in');
+  });
+</script>

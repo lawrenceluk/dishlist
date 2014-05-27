@@ -256,3 +256,15 @@ label {
 	padding: 12px;
 	border-radius: 4px;
 }
+
+// header
+.collapse {
+	overflow: hidden;
+	.form-control {
+		width: 40%;
+		display: inline-block;
+	}
+	form {
+		margin-left: 10px;
+	}
+}
