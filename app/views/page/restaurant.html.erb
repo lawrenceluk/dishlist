@@ -22,10 +22,10 @@
 						<%= image_tag @r["yelp_image_url"], class: "img-thumbnail imgblock" %>
 						<div class="textblock">
 							<div class="r-lead" id="r-name"><%= @r["name"] %></div>
-							<div class="bigger"><span class="rating"><%= @r["rating"] %></span>/5 in 
-								<%= link_to "#{@r["review_count"]} reviews", "http://www.yelp.com/search?find_desc=#{@r["name"]}&find_loc=#{@r["short_address"]}&ns=1", target: "_blank" %></h5></div>
 						</div>
 					</div>
+					<div class="bigger"><span class="rating"><%= @r["rating"] %></span>/5 in 
+						<%= link_to "#{@r["review_count"]} reviews", "http://www.yelp.com/search?find_desc=#{@r["name"]}&find_loc=#{@r["short_address"]}&ns=1", target: "_blank" %></h5></div>
 					<div>Categories: 
 						<% if @r["display_yelp_categories"] %>
 							<%= @r["display_yelp_categories"] %>
