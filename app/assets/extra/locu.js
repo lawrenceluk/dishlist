@@ -1,3 +1,23 @@
+/*
+  Live filter from http://stackoverflow.com/questions/18524554/live-search-filter-using-jquery
+*/
+function filter(element) {
+    var $trs = $('.dish').hide();
+    var regexp = new RegExp($(element).val(), 'i');
+
+    var $valid = $trs.filter(function () {
+        return regexp.test($(this).children(':first-child').text())
+    }).show();
+
+    $trs.not($valid).hide()
+}
+
+$('input').on('keyup change', function () {
+    filter(this);
+})
+
+/* Begin locu logic */
+
 var totaldishes = 0;
 var saveddishes = 0;
 
