@@ -500,7 +500,7 @@ label {
 // mobile portrait
 @media (max-width: 550px) {
 	#map-canvas {
-		width: 100% !important;
+		height: 300px !important;
 	}
 	.control-label {
   	width: 90% !important;
@@ -515,7 +515,7 @@ label {
 // all mobile
 @media (max-width: 600px) {
 	#map-canvas {
-		width: 88%;
+		height: 180px !important;
 	}
 	.img-rounded {
 		width: 80px;
