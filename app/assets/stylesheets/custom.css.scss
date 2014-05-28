@@ -497,16 +497,6 @@ label {
 	#homelink {
 		display: block;
 	}
-	#mybrand {
-		margin-left: 18%;
-		display: inline;
-	}
-	#backbutton {
-		display: block;
-		&:hover {
-			color: #EEE;
-		}
-	}
 	.fullcontainer {
 		padding-left: 0 !important;
 		padding-right: 0 !important;
@@ -551,4 +541,19 @@ label {
   .dish {
   	width: 100% !important;
   }
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) {
+	#mybrand {
+		margin-left: 12%;
+		display: inline;
+	}
+	#backbutton {
+		display: block;
+		&:hover {
+			color: #EEE;
+		}
+	}
 }
