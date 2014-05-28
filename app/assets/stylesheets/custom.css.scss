@@ -499,6 +499,9 @@ label {
 // Fixes for iOS. Important! is a necessary evil. Forgive me father for I have sinned
 // mobile portrait
 @media (max-width: 550px) {
+	#map-canvas {
+		width: 100% !important;
+	}
 	.control-label {
   	width: 90% !important;
   }
@@ -511,6 +514,9 @@ label {
 }
 // all mobile
 @media (max-width: 600px) {
+	#map-canvas {
+		width: 88%;
+	}
 	.img-rounded {
 		width: 80px;
 	}
