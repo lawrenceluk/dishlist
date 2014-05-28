@@ -265,41 +265,6 @@ label {
 }
 
 // dishlist
-@media (max-width: 600px) {
-	.fullcontainer {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-		h3, h2 {
-			text-align: center;
-		}
-	}
-  .restaurant-listing div {
-  	width: 180px;
-  	margin-left: 4px !important;
-  }
-  .restaurant-listing img {
-  	width: 80px;
-  }
-  .listing-title {
-  	font-size: 1.1em !important;
-  }
-  .listing-descrip {
-  	font-size: 0.9em !important;
-  }
-  .dish-listing {
-  	font-size: 0.9em !important;
-  	i {
-			visibility: visible !important;
-  	}
-  	.iconset {
-  		margin-top: 14px;
-  		width: 100% !important;
-  	}
-  	.descrip-8 {
-  		width: 100% !important;
-  	}
-  }
-}
 .restaurant-listing {
 	div {
 		position: relative;
@@ -510,4 +475,42 @@ label {
 		cursor: pointer;
 		color: #C45858;
 	}
+}
+
+// Fixes for iOS. Important! is a necessary evil. Forgive me father for I have sinned
+@media (max-width: 600px) {
+	.fullcontainer {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		h3, h2 {
+			text-align: center;
+		}
+	}
+  .restaurant-listing div {
+  	width: 180px;
+  	margin-left: 4px !important;
+  }
+  .restaurant-listing img {
+  	width: 80px;
+  }
+  .listing-title {
+  	font-size: 1.1em !important;
+  }
+  .listing-descrip {
+  	font-size: 0.9em !important;
+  }
+  .dish-listing {
+  	font-size: 0.9em !important;
+  	i {
+			visibility: visible !important;
+			margin-right: 14px !important;
+  	}
+  	.iconset {
+  		margin-top: 10px;
+  		width: 100% !important;
+  	}
+  	.descrip-8 {
+  		width: 100% !important;
+  	}
+  }
 }

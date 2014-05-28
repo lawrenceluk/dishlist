@@ -92,7 +92,13 @@ function drawDishes(dishes) {
   }
 }
 
-$(document).one('click', ".fa", function() {
+var lastclick = new Date().getTime();
+
+$(document).on('click', ".fa", function() {
+  if (new Date().getTime() < lastclick + 500) {
+    return;
+  }
+  lastclick = new Date().getTime();
   $(this).parent('div').hide();
   if ($(this).hasClass("remove")) {
     var dishid = $(this).attr('id').split("-")[1];
