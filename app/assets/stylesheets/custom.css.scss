@@ -344,10 +344,7 @@ label {
 }
 .navbar-toggle {
 	background: transparent !important;
-	border-color: #FFF !important;
-	&:active {
-		border-color: #CCC !important;
-	}
+	border: none;
 }
 .icon-bar {
 	background-color: #FFF !important;
