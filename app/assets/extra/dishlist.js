@@ -71,7 +71,7 @@ function drawDishes(dishes) {
     var date = d.createdAt.toString().split(" ");
     str += "<div class='dish-title'>"+d.get("name")+"</div>";
     str += "<div class='dish-descrip row'>";
-    str += "<div class='col-xs-8'>";
+    str += "<div class='col-xs-8 descrip-8'>";
     if (d.get("description"))
       str += d.get("description");
     if (d.get("price") == "-1")
