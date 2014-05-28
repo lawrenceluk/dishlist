@@ -1,7 +1,7 @@
 <%= link_to restaurant_path(r["name"].gsub(/[^0-9A-Za-z]/, ''), r["objectId"]) do %>
 <div class="restaurant row">
 	<div class="col-sm-3 col-xs-4">
-		<%= image_tag r["yelp_image_url"], class: "img-tmb" %>
+		<%= image_tag r["yelp_image_url"], class: "img-rounded" %>
 	</div>
 	<div class="col-sm-9 col-xs-8">
 			<h4><%= r["name"] %></h4>				
