@@ -30,7 +30,6 @@ $(document).on('click', "#uselocu", function() {
   var query = new Parse.Query(Restaurant);
   query.get($("#r-id").html(), {
     success: function(r) {
-      console.log($("#r-name").html()+" "+$("#mapsaddress").html());
       makeLocuSearch($("#r-name").html(), $("#mapsaddress").html().split(",")[0], r); 
     },
     error: function(object, error) {
@@ -80,7 +79,7 @@ var getMenuFromLocu = function(id, parserestaurant) {
     'success': function(data, textStats, XMLHttpRequest) {
       //console.log(data.objects[0].menus);
       var menu = data.objects[0].menus;
-      for (var section=0;section<menu.length;section++) {
+      for (var section=0;section<1;section++) { // multiple sections? don't know
         var itemsonly = [];
         getItems(menu[section].sections, itemsonly);
         //console.log(itemsonly);
