@@ -9,6 +9,9 @@ body {
   		margin-bottom: -2px;
   	}
   	font-size: 0.8em;
+  	&:hover {
+  		background: #EEE;
+  	}
   }
 }
 
@@ -285,6 +288,9 @@ label {
   }
   .dish-listing {
   	font-size: 0.9em !important;
+  	i {
+			visibility: visible !important;
+  	}
   }
 }
 .restaurant-listing {
