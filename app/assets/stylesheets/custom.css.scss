@@ -496,6 +496,10 @@ label {
 	display: none;
 }
 
+#map-canvas {
+	height: 300px;
+}
+
 // Fixes for iOS. Important! is a necessary evil. Forgive me father for I have sinned
 // mobile portrait
 @media (max-width: 550px) {
@@ -514,14 +518,14 @@ label {
 }
 // all mobile
 @media (max-width: 600px) {
-	#map-canvas {
-		height: 180px !important;
+	.col-md-8 #map-canvas {
+		height: 180px;
 	}
 	.img-rounded {
 		width: 80px;
 	}
 	.restaurant .col-xs-4 {
-		width: 110px !important;
+		width: 110px;
 	}
 	#homelink {
 		display: block;
