@@ -345,6 +345,7 @@ label {
 .navbar-toggle {
 	background: transparent !important;
 	border: none;
+	margin-top: 6px;
 }
 .icon-bar {
 	background-color: #FFF !important;
@@ -490,7 +491,7 @@ label {
 }
 
 // Fixes for iOS. Important! is a necessary evil. Forgive me father for I have sinned
-@media (max-width: 600px) {
+@media (max-width: 550px) {
 	#homelink {
 		display: block;
 	}
@@ -538,11 +539,16 @@ label {
   .dish {
   	width: 100% !important;
   }
+  .control-label {
+  	width: 90% !important;
+  }
+  .form-group .col-xs-8 {
+  	width: 100% !important;
+  }
 }
 @media only screen 
 and (min-device-width : 320px) 
-and (max-device-width : 568px) 
-and (orientation : portrait) {
+and (max-device-width : 568px) {
 	#mybrand {
 		margin-left: 12%;
 		display: inline;
