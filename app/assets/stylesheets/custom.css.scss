@@ -477,8 +477,36 @@ label {
 	}
 }
 
+#backbutton {
+	border: none;
+	background: none;
+	font-size: 2em;
+	font-weight: 400;
+	color: #FFF;
+	display: none;
+	margin-left: 10px;
+	font-weight: 200;
+}
+
+#homelink {
+	display: none;
+}
+
 // Fixes for iOS. Important! is a necessary evil. Forgive me father for I have sinned
 @media (max-width: 600px) {
+	#homelink {
+		display: block;
+	}
+	#mybrand {
+		margin-left: 18%;
+		display: inline;
+	}
+	#backbutton {
+		display: block;
+		&:hover {
+			color: #EEE;
+		}
+	}
 	.fullcontainer {
 		padding-left: 0 !important;
 		padding-right: 0 !important;

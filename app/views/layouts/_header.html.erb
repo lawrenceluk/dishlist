@@ -8,7 +8,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Dishlist", root_path, class: "navbar-brand" %>
+      <input type="button" value="<" onclick="history.back(-1)" id="backbutton" class="navbar-brand" />
+      <%= link_to "Dishlist", root_path, class: "navbar-brand", id: "mybrand" %>
     </div>
     <div class="collapse navbar-collapse" id="collapsing-bar">
       <ul class="nav navbar-nav navbar-right">
@@ -22,6 +23,7 @@
           </form>
         </li>
         <li class="center"><i class="hidden spinnas fa fa-spinner fa-spin" id="spinning"></i></li>
+        <li id="homelink"><%= link_to "Home", root_path %></li>
         <% if signed_in? %>
         <li><%= link_to "My Dishlist", dishlist_path %></li>
         <li><%= link_to "Friends", friends_path %></li>
