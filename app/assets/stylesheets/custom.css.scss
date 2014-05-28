@@ -262,12 +262,31 @@ label {
 }
 
 // dishlist
+@media (max-width: 600px) {
+  .restaurant-listing div {
+  	width: 200px;
+  	margin-left: 4px !important;
+  }
+  .restaurant-listing img {
+  	width: 80px;
+  }
+  .listing-title {
+  	font-size: 1.1em !important;
+  }
+  .listing-descrip {
+  	font-size: 0.9em !important;
+  }
+  .dish-listing {
+  	font-size: 0.9em !important;
+  }
+}
 .restaurant-listing {
 	div {
 		position: relative;
 		top: 10px;
 		display: inline-block;
 		margin-left: 12px;
+		margin-bottom: 12px;
 	}
 }
 .listing-title {
@@ -275,7 +294,7 @@ label {
 	color: #222;
 }
 .listing-descrip {
-	font-size: 0.9em;
+	font-size: 1.1em;
 	color: #888;
 }
 .dish-listing {
