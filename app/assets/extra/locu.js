@@ -118,7 +118,7 @@ var addDishToParse = function(dish, parserestaurant) {
       }
     },
     error: function(model, error) {
-      console.log("Error: "+JSON.stringify(error));
+      show("Error: " + error.code + " " + error.message);
     }
   });
 }
