@@ -509,7 +509,7 @@ label {
   	width: 100% !important;
   }
 	.restaurant .col-xs-4 {
-		width: 90px;
+		width: 90px !important;
 	}
 }
 // all mobile
@@ -521,7 +521,7 @@ label {
 		width: 80px;
 	}
 	.restaurant .col-xs-4 {
-		width: 110px;
+		width: 110px !important;
 	}
 	#homelink {
 		display: block;
