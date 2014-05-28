@@ -486,6 +486,13 @@ label {
 			text-align: center;
 		}
 	}
+	.restaurant-listing {
+		padding-bottom: 10px;
+		padding-left: 4px;
+		&:hover {
+			background: #EEE;
+		}
+	}
   .restaurant-listing div {
   	width: 180px;
   	margin-left: 4px !important;
