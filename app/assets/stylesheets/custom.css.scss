@@ -492,6 +492,14 @@ label {
 
 // Fixes for iOS. Important! is a necessary evil. Forgive me father for I have sinned
 @media (max-width: 550px) {
+	.control-label {
+  	width: 90% !important;
+  }
+  .form-group .col-xs-8 {
+  	width: 100% !important;
+  }
+}
+@media (max-width: 600px) {
 	#homelink {
 		display: block;
 	}
@@ -537,12 +545,6 @@ label {
   	}
   }
   .dish {
-  	width: 100% !important;
-  }
-  .control-label {
-  	width: 90% !important;
-  }
-  .form-group .col-xs-8 {
   	width: 100% !important;
   }
 }
