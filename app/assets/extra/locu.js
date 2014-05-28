@@ -99,7 +99,6 @@ var getMenuFromLocu = function(id, parserestaurant) {
 }
 
 function addDishToParse(dish, parserestaurant) {
-  show("Adding dish: '"+object.attributes.name+"'");
   var d = new Dish();
   if (!dish.price)
     dish.price = -1;
