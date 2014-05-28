@@ -263,8 +263,15 @@ label {
 
 // dishlist
 @media (max-width: 600px) {
+	.fullcontainer {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		h3, h2 {
+			text-align: center;
+		}
+	}
   .restaurant-listing div {
-  	width: 200px;
+  	width: 180px;
   	margin-left: 4px !important;
   }
   .restaurant-listing img {
