@@ -38,7 +38,7 @@ var $body = $("#home-content");
 function appendRestaurant(r) {
 	var str = "<a href='/restaurant/"+r.get("name").replace(/[\*\^\'\!\.]/g, '').split(' ').join('')+"/"+r.id+"'><div class='restaurant row'>";
 	str += '<div class="col-sm-3 col-xs-4">';
-	str += "<img src="+r.get("yelp_image_url")+" class='img-thumbnail'></div>"
+	str += "<img src="+r.get("yelp_image_url")+" class='img-tmb'></div>"
 	str += '<div class="col-sm-9 col-xs-8">'
 	str += "<h4>"+r.get("name")+"</h4>"
 	str += '<span class="rating">'+r.get("rating")+'</span>/5 in '+r.get("review_count")+' reviews</h5><br /><div class="row"><div class="col-sm-5"><span class="text-warning">'+r.get("display_yelp_categories")+'</span></div><div class="col-sm-7"><i class="fa fa-map-marker"></i> '+r.get("short_address")+'</div></div></div></div></a>'
