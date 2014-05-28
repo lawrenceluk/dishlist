@@ -98,7 +98,8 @@ var getMenuFromLocu = function(id, parserestaurant) {
   });
 }
 
-var addDishToParse = function(dish, parserestaurant) {
+function addDishToParse(dish, parserestaurant) {
+  show("Adding dish: '"+object.attributes.name+"'");
   var d = new Dish();
   if (!dish.price)
     dish.price = -1;
@@ -118,7 +119,7 @@ var addDishToParse = function(dish, parserestaurant) {
       }
     },
     error: function(model, error) {
-      show("Error: " + error.code + " " + error.message);
+      console.log("Error: " + error.code + " " + error.message);
     }
   });
 }
