@@ -87,7 +87,7 @@ var getMenuFromLocu = function(id, parserestaurant) {
         totaldishes += itemsonly.length;
         show(parserestaurant.attributes.name+": Retrieved "+itemsonly.length+" dishes from Locu.");
         for (var dd=0;dd<itemsonly.length;dd++) {
-          addDishToParse(itemsonly[dd], parserestaurant, new Dish());
+          addDishToParse(itemsonly[dd], parserestaurant, new Dish);
         }
         show("Saving to Parse. Please wait, this might take a while...");
       }
