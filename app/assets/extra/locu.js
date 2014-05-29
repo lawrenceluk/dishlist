@@ -27,6 +27,7 @@ $(document).on('click', "#uselocu", function() {
   $(this).addClass("hiding");
   Parse.initialize("dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", "wHkRLFgELqtUWCAnoXKPdJi7pWfYMJnNisEhuNS2"); 
   var Restaurant = Parse.Object.extend("Restaurant");
+  var Dish = Parse.Object.extend("Dish");
   var query = new Parse.Query(Restaurant);
   query.get($("#r-id").html(), {
     success: function(r) {
