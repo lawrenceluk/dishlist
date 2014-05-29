@@ -86,7 +86,7 @@ var getMenuFromLocu = function(id, parserestaurant) {
         totaldishes += itemsonly.length;
         show(parserestaurant.attributes.name+": Retrieved "+itemsonly.length+" dishes from Locu.");
         for (var dd=0;dd<itemsonly.length;dd++) {
-          addDishToParse(itemsonly[dd], parserestaurant);
+          addDishToParse(itemsonly[dd], parserestaurant, new Dish());
         }
         show("Saving to Parse. Please wait, this might take a while...");
       }
@@ -97,8 +97,7 @@ var getMenuFromLocu = function(id, parserestaurant) {
   });
 }
 
-function addDishToParse(dish, parserestaurant) {
-  var createdish = new Dish();
+function addDishToParse(dish, parserestaurant, createdish) {
   if (!dish.price)
     dish.price = -1;
   createdish.save(
