@@ -98,10 +98,10 @@ var getMenuFromLocu = function(id, parserestaurant) {
 }
 
 function addDishToParse(dish, parserestaurant) {
-  var d = new Dish();
+  var createdish = new Dish();
   if (!dish.price)
     dish.price = -1;
-  d.save(
+  createdish.save(
     {
       name: dish.name,
       description: dish.description,
