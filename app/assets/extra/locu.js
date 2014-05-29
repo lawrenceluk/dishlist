@@ -18,6 +18,10 @@ $('input').on('keyup change', function () {
 
 /* Begin locu logic */
 
+Parse.initialize("dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", "wHkRLFgELqtUWCAnoXKPdJi7pWfYMJnNisEhuNS2"); 
+var Restaurant = Parse.Object.extend("Restaurant");
+var Dish = Parse.Object.extend("Dish");
+
 var totaldishes = 0;
 var saveddishes = 0;
 var loaded = false;
@@ -25,9 +29,6 @@ var loaded = false;
 $(document).on('click', "#uselocu", function() {
   $("#usinglocu").removeClass("hiding");
   $(this).addClass("hiding");
-  Parse.initialize("dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", "wHkRLFgELqtUWCAnoXKPdJi7pWfYMJnNisEhuNS2"); 
-  var Restaurant = Parse.Object.extend("Restaurant");
-  var Dish = Parse.Object.extend("Dish");
   var query = new Parse.Query(Restaurant);
   query.get($("#r-id").html(), {
     success: function(r) {
