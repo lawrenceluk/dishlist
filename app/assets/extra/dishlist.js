@@ -69,19 +69,26 @@ function drawRestaurant(rid, dishes) {
 }
 
 function drawDishes(dishes) {
-  $c.append("<ul>")
+  $c.append("<ul>");
   for (var i=0;i<dishes.length;i++) {
     var d = dishes[i];
     var str = "<li><div class='dish-listing' id="+d.id+">";
     var date = d.createdAt.toString().split(" ");
-    str += "<div class='dish-title'>"+d.get("name")
-    if (d.get("price") != -1) str += " - $"+d.get("price");
-    str += "</div>";
+    str += "<div class='dish-title'>"+d.get("name")+"</div>";
     str += "<div class='dish-descrip row'>";
     str += "<div class='col-xs-8 descrip-8'>";
     if (d.get("description"))
       str += d.get("description");
-    str += "</div>";
+    if (d.get("price") == "-1")
+      str += " - price not listed";
+    else str += " - $"+d.get("price");
+    str += "</div>"
+    str += "<div class='col-xs-4 iconset' id='ico-"+d.id+"'>";
+    if (mode != "Likelist")
+      str += "<i class='fa fa-thumbs-o-up liked' title='Tried it, liked it!' id='li-"+d.id+"'></i> ";
+    if (mode != "Dislikelist")
+      str += "<i class='fa fa-thumbs-down disliked' title='Tried it, didnt like it :(' id='di-"+d.id+"'></i>";
+    str += "<i class='fa fa-trash-o remove' title='Remove from my Dishlist' id='rm-"+d.id+"'></i>";
     str += "</div>";
     str += "</div>"
     str += "</div></li>";
