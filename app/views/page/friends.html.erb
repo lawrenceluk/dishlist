@@ -5,7 +5,7 @@
 			<% if @friends && @friends.any? %>
                 <% @friends.each_with_index do |f, i| %>
                     <div class='friend-card' id='<%= @friendids[i] %>'>
-                        <i class='fa fa-user'></i> <%= f %>
+                        <i class='fa fa-user'></i> <%= link_to f, user_path(f) %>
                         <i class='fa fa-times pull-right'></i>
                     </div>
                 <% end %>
@@ -30,7 +30,7 @@
         <form class="form-inline" id="d-add">
             <div class="form-group">
             	<label for="d-name">Username</label>
-                <input type="text" class="form-control" placeholder="chipmunk69" name="name" id="d-name">
+                <input type="text" class="form-control" placeholder="username" name="name" id="d-name">
             </div>
             <button class="btn btn-info" id="d-add">Search</button>
         </form>

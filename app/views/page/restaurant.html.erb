@@ -60,14 +60,12 @@
 				<% @dishes.each do |dish| %>
 					<div class="dish col-xs-6" id=<%= dish.id %>>
 						<div class="fixedwidth">
-							<h5><%= dish["name"] %></h5>
-							<% if dish["description"] %>
-								<%= dish["description"] %>
-							<% end %>
+							<h5><%= dish["name"] %>
 							<% if dish["price"] != "-1" %>
 								- $<%= dish["price"] %>
-							<% else %>
-								- price not listed
+							<% end %></h5>
+							<% if dish["description"] %>
+								<%= dish["description"] %>
 							<% end %>
 							<% if dish["listed"] && dish["listed"] > 0 %>
 								<div class="dishstats">On <%= pluralize(dish["listed"], "Dishlist") %></div>

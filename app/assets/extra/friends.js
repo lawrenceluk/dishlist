@@ -65,7 +65,10 @@ $(document).on('click', ".user-card", function(e) {
 	}
 });
 
+var detect = new Date().getTime();
 $(document).on('click', ".add-card .fa", function(e) {
+	if (new Date().getTime() < detect + 200) return;
+	detect = new Date().getTime(); // for weird async onclick problems
 	var parent = $(this).parent('div').parent('div');
 	if (!parseuser) return;
 	var name = parent.find(".r-name").html();
@@ -75,7 +78,7 @@ $(document).on('click', ".add-card .fa", function(e) {
       success: function(status) {
       	// append to friends
       	$("#nofriends").html("");
-      	$("#content").append("<div class='friend-card' id='"+status+"'><i class='fa fa-user'></i> "+name+"<i class='fa fa-times pull-right'></i></div>");
+      	$("#content").append("<div class='friend-card' id='"+status+"'><i class='fa fa-user'></i> <a href='/user/"+name+"'>"+name+"</a><i class='fa fa-times pull-right'></i></div>");
       },
       error: function(error) {
       	console.log("Error: " + error.code + " " + error.message);

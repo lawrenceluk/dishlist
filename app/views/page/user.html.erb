@@ -1,0 +1,25 @@
+<% if !@user.nil? %><% content_for :title, "| #{@user["username"]}" %><% end %>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 fullcontainer">
+		<div class="profile center drop-shadow lifted">
+			<% if @user.nil? %>
+				<h2 class="gray">User was not found.</h2>
+			<% else %>
+				<div><i class="fa fa-user fa-4x usersymbol"></i></div>
+				<h2><%= @user["username"] %></h2>
+				<div>Joined <%= time_ago_in_words @user["createdAt"] %> ago</div>
+				<div><% if !@user["friends"].nil? %><%= pluralize @user["friends"].count, "friend" %><% end %></div>
+				<% if !@parseuser.nil? && @parseuser["friends"].include?(@user["objectId"]) || @parseuser == @user %>
+					<h3 class="gray" id="spinnin"><i class='fa fa-spinner fa-spin fa-2x'></i></h3>
+					<div id="username"><%= @user["objectId"] %></div>
+					<div id="fl-content">
+					<% content_for :javascript_includes do %>
+						<%= javascript_include_tag "friendslist.js" %>
+					<% end %>
+				<% else %>
+					<h3 class="gray">You must be friends with <%= @user["username"] %> to see their Dishlist.</h3>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

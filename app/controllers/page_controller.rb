@@ -24,6 +24,22 @@ class PageController < ApplicationController
 		end
 	end
 
+	def user
+		if params[:username]
+			user_q = Parse::Query.new("_User")
+			user_q.eq("username", params[:username])
+			parseuser = user_q.get.first
+			if parseuser
+				@user = parseuser
+			else
+				@user = nil
+			end
+			user_q = Parse::Query.new("_User")
+			user_q.eq("username", active_user.username)
+			@parseuser = user_q.get.first
+		end
+	end
+
 	def list
 		if active_user.nil?
 			redirect_to root_path

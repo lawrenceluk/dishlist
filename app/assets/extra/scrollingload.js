@@ -36,7 +36,7 @@ function loadMore() {
 var $body = $("#home-content");
 
 function appendRestaurant(r) {
-	var str = "<a href='/restaurant/"+r.get("name").replace(/[\*\^\'\!\.]/g, '').split(' ').join('')+"/"+r.id+"'><div class='restaurant row'>";
+	var str = "<a href='/restaurant/"+r.get("name").replace(/[\*\^\'\!\.\/]/g, '').split(' ').join('')+"/"+r.id+"'><div class='restaurant row'>";
 	str += '<div class="col-sm-3 col-xs-4">';
 	str += "<img src="+r.get("yelp_image_url")+" class='img-rounded'></div>"
 	str += '<div class="col-sm-9 col-xs-8">'

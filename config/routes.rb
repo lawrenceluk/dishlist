@@ -5,6 +5,7 @@ Dishlist::Application.routes.draw do
   match '/dishlist', to: 'page#list', via: [:get]
   match '/friends', to: 'page#friends', via: [:get]
   match '/restaurant/:restaurant/:id', to: 'page#restaurant', via: [:get], as: "restaurant"
+  match '/user/:username', to: 'page#user', via: [:get], as: "user"
 
   match '/search', to: 'page#search', via: [:get]
 
