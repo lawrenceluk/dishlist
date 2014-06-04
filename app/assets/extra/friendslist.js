@@ -1,4 +1,4 @@
-var dishlist, parseuser;
+var dishlist, currentlist, parseuser, currentuser;
 var mode = "Dishlist";
 var $c = $("#fl-content");
 Parse.initialize("dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", "wHkRLFgELqtUWCAnoXKPdJi7pWfYMJnNisEhuNS2"); 
@@ -10,31 +10,41 @@ var getuser = new Parse.Query(User);
 getuser.get($("#username").html(), {
   success: function(user) {
     parseuser = user;
-    getDishlist();
+    var cuser = new Parse.Query(User);
+    cuser.get($("#currentuser").html(), {
+    	success: function(u) {
+    		currentuser = u;
+    		getDishlist();
+    	},
+    	error: function(object, error) {
+    		console.log("Error saving: "+JSON.stringify(error));
+    	}
+    });
   },
   error: function(object, error) {
-    console.log("Parse Error: "+error)
+    console.log("Error saving: "+JSON.stringify(error));
   }
 });
 
 function getDishlist() {
   var relation = parseuser.relation("dishlist");
-  if (window.location.search.substring(1) === "show=liked") {
-    relation = parseuser.relation("likelist");
-    mode = "Likelist";
-  }
-  else if (window.location.search.substring(1) === "show=disliked") {
-    relation = parseuser.relation("dislikelist");
-    mode = "Dislikelist";
-  }
+  var compare_relation = currentuser.relation("dishlist");
   relation.query().find({
     success: function(list) {
         if (list.length == 0) {
         	$("#spinnin").html("");
-          $c.html("<h2 class='gray center'>This list is empty.</h2>");
+          $c.html("<h2 class='gray center'>The user's Dishlist is empty.</h2>");
         } else {
-          dishlist = list;
-          drawList();
+        	dishlist = list;
+        	compare_relation.query().find({
+        		success: function(clist) {
+        			currentlist = [];
+        			for (var i=0;i<clist.length;i++) {
+        				currentlist.push(clist[i].id);
+        			}
+        			drawList();
+        		}
+        	});
         }
     }
   });
@@ -84,6 +94,10 @@ function drawDishes(dishes) {
     if (d.get("description"))
       str += d.get("description");
     str += "</div>";
+    //
+    if (currentlist.indexOf(d.id) > 0)
+    	str += "<div class='col-xs-4 descrip-8 atn'><i class='fa fa-check-square-o'></i> Also on your Dishlist!</div>";
+    //
     str += "</div>";
     str += "</div>"
     str += "</div></li>";

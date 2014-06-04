@@ -12,6 +12,7 @@
 				<% if !@parseuser.nil? && @parseuser["friends"].include?(@user["objectId"]) || @parseuser == @user %>
 					<h3 class="gray" id="spinnin"><i class='fa fa-spinner fa-spin fa-2x'></i></h3>
 					<div id="username"><%= @user["objectId"] %></div>
+					<div id="currentuser" class="hiding"><%= @parseuser["objectId"] %></div>
 					<div id="fl-content">
 					<% content_for :javascript_includes do %>
 						<%= javascript_include_tag "friendslist.js" %>

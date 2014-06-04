@@ -304,6 +304,7 @@ label {
 	}
 }
 .dish-descrip {
+	margin-left: 0;
 	font-size: 0.88em;
 	color: #AAA;
 }
@@ -500,7 +501,7 @@ label {
 }
 
 .sm-rest-listing {
-	font-size: 0.8em;
+	font-size: 0.97em;
 	padding: 8px;
 	border-bottom: 4px solid #16AB99;
 	a {
@@ -515,6 +516,13 @@ label {
 	.inline {
 		margin-left: 15px;
 		display: inline;
+	}
+}
+
+.atn {
+	color: #16AB4F;
+	.fa {
+		visibility: visible;
 	}
 }
 
