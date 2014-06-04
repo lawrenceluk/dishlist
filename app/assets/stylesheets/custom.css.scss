@@ -503,12 +503,14 @@ label {
 .sm-rest-listing {
 	font-size: 0.97em;
 	padding: 8px;
+	background-color: #D4FAF5;
 	border-bottom: 4px solid #16AB99;
+	margin-top: 30px;
 	a {
 		text-decoration: none !important;
 	}
 	&:hover {
-		background-color: #F5F5F5;
+		background-color: #C7F2ED;
 	}
 	.listing-title {
 		display: inline-block;
