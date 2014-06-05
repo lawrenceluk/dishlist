@@ -55,7 +55,7 @@ function makeLocuSearch(rname, address, parseobject) {
     'cache': true,
     'dataType': 'jsonp',
     'success': function(data, textStats, XMLHttpRequest) {
-      if (data.objects.length == 0 || data.objects[0].has_menu == false || loaded) {
+      if ((data.objects.length == 0 || data.objects[0].has_menu == false) && !loaded) {
         show(rname+" does not have a menu listed online.");
       } else {
         loaded = true;

@@ -81,7 +81,9 @@ class PageController < ApplicationController
 			request = Location.new(
 			           :term => @term,
 			           :city => @loc,
-			           :limit => 10)
+			           :limit => 10,
+			           :category => 'food, restaurants'
+			           )
 			response = client.search(request)
 			r_a = response["businesses"]
 			r_a.each do |r|

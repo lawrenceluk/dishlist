@@ -413,7 +413,7 @@ label {
 	margin-top: 20px;
 }
 .friend-card {
-	width: 260px;
+	width: 270px;
 	margin: 4px;
 	padding: 8px;
 	border-radius: 2px;
@@ -630,6 +630,11 @@ label {
   }
   .dish {
   	width: 100% !important;
+  }
+  .friend-card {
+  	.fa-times {
+  		visibility: visible;
+  	}
   }
 }
 // iPhone specific
