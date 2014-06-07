@@ -70,7 +70,7 @@ class UserController < ApplicationController
 		if @user[:password].length > 20
 			@user.errors.add(:password, "too long")
 		end	
-		user = Parse::User.authenticate(@user[:username], @user[:password]) rescue @user.errors[:base] << "inv"
+		user = Parse::User.authenticate(@user[:username], params[:parse_user][:password]) rescue @user.errors[:base] << "inv"
 		if @user.errors.any?
 			render 'login'
 		else
