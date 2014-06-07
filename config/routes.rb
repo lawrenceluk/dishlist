@@ -13,7 +13,7 @@ Dishlist::Application.routes.draw do
   match '/login', to: 'user#login', via: [:get]
   match '/signup', to: 'user#new', via: [:get]
   match '/usercreate', to: 'user#create', via: [:post]
-  match '/loginattempt', to: 'user#loginattempt', via: [:post]
+  match '/loginattempt', to: 'user#loginattempt', via: [:post, :patch]
 
   #devise_for :users
 
