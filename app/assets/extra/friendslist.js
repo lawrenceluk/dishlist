@@ -72,7 +72,7 @@ function drawRestaurant(rid, dishes) {
     var str = "<div id=r"+restaurant.id+" class='sm-rest-listing'>";
     str += "<a href='/restaurant/"+restaurant.get("name").replace(/[^a-z0-9\s]/gi, '')+"/"+restaurant.id+"'><div class='listing-title'>"+restaurant.get("name")+"</div><div class='inline'>("+restaurant.get("display_yelp_categories")+")</div><div>"+restaurant.get("short_address")+"</div></div>";
     $c.append(str + "</div>");
-    drawDishes(dishes);
+    drawDishes(dishes, "/restaurant/"+restaurant.get("name").replace(/[^a-z0-9\s]/gi, '')+"/"+restaurant.id);
   },
   error: function(object, error) {
     console.log("Parse Error: "+error)
@@ -80,15 +80,15 @@ function drawRestaurant(rid, dishes) {
   });
 }
 
-function drawDishes(dishes) {
+function drawDishes(dishes, rooturl) {
 	$c.append("<ul>")
   for (var i=0;i<dishes.length;i++) {
     var d = dishes[i];
     var str = "<li><div class='dish-listing' id="+d.id+">";
     var date = d.createdAt.toString().split(" ");
-    str += "<div class='dish-title'>"+d.get("name")
+    str += "<div class='dish-title'><a href='"+rooturl+"#"+d.id+"'>"+d.get("name");
     if (d.get("price") != -1) str += " - $"+d.get("price");
-    str += "</div>";
+    str += "</a></div>";
     str += "<div class='dish-descrip row'>";
     str += "<div class='col-xs-8 descrip-8'>";
     if (d.get("description"))

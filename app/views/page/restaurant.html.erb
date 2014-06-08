@@ -35,7 +35,7 @@
 					</div>
 					<div><%= @r["display_address"] %></div>
 					<div>Phone: <%= @r["display_phone_number"] %></div>
-					<div class="small-margin"><i class="fa fa-map-marker"></i> <%= @r["full_address"] %></div>
+					<div class="small-margin"><i class="fa fa-map-marker"></i> <%= link_to @r["full_address"], "https://www.google.com/maps/place/#{@r["full_address"]}", target: "_blank" %></div>
 					<% if @dishes.any? %>
 						<div><%= @dishes.size %> dishes are listed </div>
 					<% end %>

@@ -165,3 +165,27 @@ function addToDislike(status, dishid) {
   }
   });  
 }
+
+function removeFromLike(status, dishid) {
+  Parse.Cloud.run('removeDishFromUserLikelist', { userid: parseuser.id, dish: dishid }, {
+  success: function(status) {
+    $("#"+dishid).hide();
+  },
+  error: function(error) {
+    $("#ico-"+dishid).show();     
+    console.log("Error saving: "+JSON.stringify(error));
+  }
+  });
+}
+
+function removeFromDislike(status, dishid) {
+  Parse.Cloud.run('removeDishFromUserDislikelist', { userid: parseuser.id, dish: dishid }, {
+  success: function(status) {
+    $("#"+dishid).hide();
+  },
+  error: function(error) {
+    $("#ico-"+dishid).show();     
+    console.log("Error saving: "+JSON.stringify(error));
+  }
+  });
+}
