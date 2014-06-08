@@ -95,7 +95,7 @@ function drawDishes(dishes, rooturl) {
       str += d.get("description");
     str += "</div>";
     //
-    if (currentlist.indexOf(d.id) > 0)
+    if (currentlist.indexOf(d.id) != -1)
     	str += "<div class='col-xs-4 descrip-8 atn'><i class='fa fa-check-square-o'></i> Also on your Dishlist!</div>";
     //
     str += "</div>";

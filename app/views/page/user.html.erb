@@ -3,6 +3,7 @@
 	<div class="col-md-6 col-md-offset-3 fullcontainer">
 		<div class="profile center drop-shadow lifted">
 			<% if @user.nil? %>
+				<div><i class="fa fa-user fa-4x gray"></i></div>
 				<h2 class="gray">User was not found.</h2>
 			<% else %>
 				<div><i class="fa fa-user fa-4x usersymbol"></i></div>
