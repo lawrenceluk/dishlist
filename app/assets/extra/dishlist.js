@@ -74,14 +74,17 @@ function drawDishes(dishes) {
     var d = dishes[i];
     var str = "<li><div class='dish-listing' id="+d.id+">";
     var date = d.createdAt.toString().split(" ");
-    str += "<div class='dish-title'>"+d.get("name")+"</div>";
+    str += "<div class='dish-title'>"+d.get("name");
+    if (d.get("price") == "-1")
+      str += " - price not listed";
+    else str += " - $"+d.get("price");
+    str += "</div>";
     str += "<div class='dish-descrip row'>";
     str += "<div class='col-xs-8 descrip-8'>";
     if (d.get("description"))
       str += d.get("description");
-    if (d.get("price") == "-1")
-      str += " - price not listed";
-    else str += " - $"+d.get("price");
+    if (d.get("listed") > 1)
+      str += "<div class='dishstats smaller'>On "+(d.get("listed")-1)+" other Dishlist(s)</div>";
     str += "</div>"
     str += "<div class='col-xs-4 iconset' id='ico-"+d.id+"'>";
     if (mode != "Likelist")
@@ -164,28 +167,4 @@ function addToDislike(status, dishid) {
     console.log("Error saving: "+JSON.stringify(error));
   }
   });  
-}
-
-function removeFromLike(status, dishid) {
-  Parse.Cloud.run('removeDishFromUserLikelist', { userid: parseuser.id, dish: dishid }, {
-  success: function(status) {
-    $("#"+dishid).hide();
-  },
-  error: function(error) {
-    $("#ico-"+dishid).show();     
-    console.log("Error saving: "+JSON.stringify(error));
-  }
-  });
-}
-
-function removeFromDislike(status, dishid) {
-  Parse.Cloud.run('removeDishFromUserDislikelist', { userid: parseuser.id, dish: dishid }, {
-  success: function(status) {
-    $("#"+dishid).hide();
-  },
-  error: function(error) {
-    $("#ico-"+dishid).show();     
-    console.log("Error saving: "+JSON.stringify(error));
-  }
-  });
 }
