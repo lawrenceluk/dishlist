@@ -12,7 +12,7 @@ function filter(element) {
     $trs.not($valid).hide()
 }
 
-$('input').on('keyup change', function () {
+$('#menu-searcher').on('keyup change', function () {
     filter(this);
 })
 

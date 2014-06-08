@@ -69,10 +69,9 @@ function drawRestaurant(rid, dishes) {
 }
 
 function drawDishes(dishes) {
-  $c.append("<ul>");
   for (var i=0;i<dishes.length;i++) {
     var d = dishes[i];
-    var str = "<li><div class='dish-listing' id="+d.id+">";
+    var str = "<div class='dish-listing' id="+d.id+">";
     var date = d.createdAt.toString().split(" ");
     str += "<div class='dish-title'>"+d.get("name");
     if (d.get("price") != "-1")
@@ -91,11 +90,10 @@ function drawDishes(dishes) {
     str += "<i class='fa fa-trash-o remove' title='Remove from my Dishlist' id='rm-"+d.id+"'></i>";
     str += "</div>";
     str += "</div>"
-    str += "</div></li>";
+    str += "</div>";
     // created at to see how long it's been on your list
     $c.append(str);
   }
-  $c.append("</ul>");
 }
 
 var lastclick = new Date().getTime();
