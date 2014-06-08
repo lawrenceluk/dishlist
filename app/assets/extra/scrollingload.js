@@ -3,9 +3,9 @@ var loaded = 10;
 
 $(window).scroll(function () {
 	if ($("#home-content").length > 0)
-  if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 ) {
-    if (interval+2000 < new Date().getTime()) {
-    	interval = new Date().getTime() + 2000;
+  if ($(window).scrollTop() + $(window).height() > $(document).height() - 250 ) {
+    if (interval+1500 < new Date().getTime()) {
+    	interval = new Date().getTime() + 1500;
     	loadMore();
     }
   }
